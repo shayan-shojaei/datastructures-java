@@ -21,33 +21,33 @@ public class MyLinkedList<T> {
         return head == null;
     }
 
-    public void insertAtBeginning(T new_data) {
-        Node<T> new_node = new Node<>(new_data);
-        new_node.next = head;
-        head = new_node;
+    public void insertAtBeginning(T newData) {
+        Node<T> newNode = new Node<>(newData);
+        newNode.next = head;
+        head = newNode;
     }
 
-    public void insertAtEnd(T new_data) {
-        Node<T> new_node = new Node<>(new_data);
+    public void insertAtEnd(T newData) {
+        Node<T> newNode = new Node<>(newData);
         if (head == null) {
-            head = new Node<T>(new_data);
+            head = new Node<T>(newData);
             return;
         }
-        new_node.next = null;
+        newNode.next = null;
         Node<T> last = head;
         while (last.next != null)
             last = last.next;
-        last.next = new_node;
+        last.next = newNode;
     }
 
-    public void insertAfter(Node<T> prev_node, T new_data) {
+    public void insertAfter(Node<T> prev_node, T newData) {
         if (prev_node == null) {
             System.out.println("The given previous node cannot be null");
             return;
         }
-        Node<T> new_node = new Node<>(new_data);
-        new_node.next = prev_node.next;
-        prev_node.next = new_node;
+        Node<T> newNode = new Node<>(newData);
+        newNode.next = prev_node.next;
+        prev_node.next = newNode;
     }
 
     public Node<T> search(T key) {
